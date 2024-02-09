@@ -1,0 +1,82 @@
+Permissions of sensitive mount points should be restrictive
+
+Vulnerability
+Critical
+
+    Available SinceDec 19, 2023
+    SonarQube (Docker)
+    Constant/issue: 15min
+
+Docker offers a feature to mount files and directories for specific RUN instructions when building Docker images. This feature can be used to provide secrets to the commands that are executed during the build without baking them into the image. Additionally, it can be used to access SSH agents during the build.
+
+By using the mode option the permissions of the secrets or agents can be modified. By default, access is limited to the root user.
+
+When such secrets are exposed with lax permissions, they might get compromised during the image build process. A successful compromise can only happen during the execution of the command the mount option has been added to. While this might seem like a very hard exploitation requirement, supply chain attacks, and other related threats, should still be considered.
+
+If you are executing a command as a low-privileged user and need to access secrets or agents, you can use the options uid and gid to provide access without having to resort to world-readable or writable permissions that might expose them to unintended parties.
+Noncompliant Code Example
+
+RUN --mount=type=secret,id=build_secret,mode=0777 ./installer.sh # Noncompliant
+
+Compliant Solution
+
+RUN --mount=type=secret,id=build_secret,uid=1000 ./installer.sh
+
+See
+
+    MITRE, CWE-732 - Incorrect Permission Assignment for Critical Resource
+    Dockerfile reference - RUN --mount
+
+## 1
+
+FROM ubuntu:22.04
+# Sensitive
+EXPOSE 22
+CMD ["/usr/sbin/sshd", "-f", "/etc/ssh/sshd_config", "-D"]
+
+## 2
+
+FROM ubuntu:22.04
+# Sensitive
+COPY . .
+CMD /run.sh
+
+FROM ubuntu:22.04
+# Sensitive
+COPY ./example* /
+COPY ./run.sh /
+CMD /run.sh
+
+
+## 3
+# Sensitive
+FROM alpine
+
+ENTRYPOINT ["id"]
+
+FROM alpine as builder
+COPY Makefile ./src /
+RUN make build
+USER nonroot
+
+# Sensitive, previous user settings are dropped
+FROM alpine as runtime
+COPY --from=builder bin/production /app
+ENTRYPOINT ["/app/production"]
+
+## 4
+RUN curl http://www.example.com/
+
+## 5
+FROM example
+ARG ACCESS_TOKEN
+# Sensitive
+ENV ACCESS_TOKEN=${ACCESS_TOKEN}
+CMD /run.sh
+
+
+
+
+
+
+ 
