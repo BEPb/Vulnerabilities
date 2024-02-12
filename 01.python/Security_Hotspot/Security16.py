@@ -1,6 +1,6 @@
 ###### Расширение файлов архива без контроля потребления ресурсов является чувствительным к безопасности.
 
-Точка доступа безопасности
+'''Точка доступа безопасности
 Критический
 
      Доступно с 19 декабря 2023 г.
@@ -23,7 +23,7 @@
 Пример конфиденциального кода
 
 
-For tarfile module:
+For tarfile module:'''
 
 import tarfile
 
@@ -45,13 +45,13 @@ zfile.close()
 
 ### Рекомендуемые методы безопасного кодирования
 
-     Определяйте и контролируйте соотношение между сжатыми и несжатыми данными. Как правило, степень сжатия данных для большинства легальных архивов составляет от 1 до 3.
+    ''' Определяйте и контролируйте соотношение между сжатыми и несжатыми данными. Как правило, степень сжатия данных для большинства легальных архивов составляет от 1 до 3.
      Определите и контролируйте порог максимального общего размера несжатых данных.
      Подсчитайте количество записей файлов, извлеченных из архива, и прервите извлечение, если их количество превышает заданный порог, в частности, не рекомендуется рекурсивно расширять архивы (запись архива также может быть архивом).
 
 Соответствующее решение
 
-For tarfile module:
+For tarfile module:'''
 
 import tarfile
 
@@ -94,7 +94,7 @@ for entry in tfile:
 
 tfile.close()
 
-For zipfile module:
+# For zipfile module:
 
 import zipfile
 
@@ -128,13 +128,13 @@ for zinfo in zfile.infolist():
 
 zfile.close()
 
-See
+'''See
 
     OWASP Top 10 2021 Category A1 - Broken Access Control
     OWASP Top 10 2021 Category A5 - Security Misconfiguration
     OWASP Top 10 2017 Category A6 - Security Misconfiguration
     MITRE, CWE-409 - Improper Handling of Highly Compressed Data (Data Amplification)
-    bamsoftware.com - A better Zip Bomb
+    bamsoftware.com - A better Zip Bomb'''
 
 
 

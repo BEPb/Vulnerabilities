@@ -1,6 +1,6 @@
 ###### Шифрование данных важно для безопасности
 
-Точка доступа безопасности
+'''Точка доступа безопасности
 Критический
 Устарело
 
@@ -34,8 +34,8 @@
 
 Вы находитесь в группе риска, если ответили утвердительно хотя бы на один из этих вопросов.
 Пример конфиденциального кода
-
-cryptography module
+'''
+# cryptography module
 
 from cryptography.fernet import Fernet
 from cryptography.hazmat.primitives.ciphers.aead import ChaCha20Poly1305, AESGCM, AESCCM
@@ -56,7 +56,7 @@ private_key = rsa.generate_private_key()  # Sensitive
 def encrypt2(algorithm, mode, backend):
     Cipher(algorithm, mode, backend)  # Sensitive
 
-pynacl library
+# pynacl library
 
 from nacl.public import Box
 from nacl.secret import SecretBox
@@ -74,7 +74,7 @@ def secret_encrypt(key):
 
 ### Recommended Secure Coding Practices
 
-   Рекомендуемые методы безопасного кодирования
+   '''Рекомендуемые методы безопасного кодирования
 
      Генерируйте ключи шифрования, используя безопасные случайные алгоритмы.
      При создании криптографических ключей (или пар ключей) важно использовать длину ключа, обеспечивающую достаточную энтропию против атак методом перебора. Для алгоритма Blowfish длина ключа должна быть не менее 128 бит, а для алгоритма RSA — не менее 2048 бит.
@@ -101,7 +101,7 @@ See
     MITRE, CWE-326 - Inadequate Encryption Strength
     MITRE, CWE-327 - Use of a Broken or Risky Cryptographic Algorithm
     SANS Top 25 - Porous Defenses
-
+'''
 
 
 

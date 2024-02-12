@@ -1,6 +1,6 @@
 ###### Отключение шифрования корзин S3 на стороне сервера важно для безопасности.
 
-Точка доступа безопасности
+'''Точка доступа безопасности
 Незначительный
 
      Доступно с 19 декабря 2023 г.
@@ -26,23 +26,23 @@
 Существует риск, если вы ответили утвердительно на любой из этих вопросов.
 Пример конфиденциального кода
 
-Шифрование на стороне сервера не используется:
+Шифрование на стороне сервера не используется:'''
 
 bucket = s3.Bucket(self,"bucket",
     encryption=s3.BucketEncryption.UNENCRYPTED       # Sensitive
 )
 
-Значением шифрования по умолчанию является KMS, если установлен ключ шифрования. В противном случае, если оба параметра отсутствуют, сегмент не зашифрован.
+# Значением шифрования по умолчанию является KMS, если установлен ключ шифрования. В противном случае, если оба параметра отсутствуют, сегмент не зашифрован.
 
 
 
 ### Рекомендуемые методы безопасного кодирования
 
-Рекомендуется использовать SSE. Выбор подходящей опции зависит от уровня контроля, необходимого для управления ключами шифрования.
+'''Рекомендуется использовать SSE. Выбор подходящей опции зависит от уровня контроля, необходимого для управления ключами шифрования.
 Соответствующее решение
 
 Server-side encryption with Amazon S3-Managed Keys is used:
-
+'''
 bucket = s3.Bucket(self,"bucket",
     encryption=s3.BucketEncryption.S3_MANAGED
 )
@@ -53,7 +53,7 @@ bucket = s3.Bucket(self,"bucket",
     encryptionKey=access_key
 )
 
-See
+'''See
 
     OWASP Top 10 2021 Category A4 - Insecure Design
     OWASP Top 10 2021 Category A5 - Security Misconfiguration
@@ -61,7 +61,7 @@ See
     OWASP Top 10 2017 Category A3 - Sensitive Data Exposure
     OWASP Top 10 2017 Category A6 - Security Misconfiguration
     AWS documentation - Protecting data using server-side encryption
-    AWS CDK version 2 - BucketEncryption
+    AWS CDK version 2 - BucketEncryption'''
 
 
 

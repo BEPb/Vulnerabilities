@@ -1,5 +1,5 @@
 ###### Использование протоколов открытого текста является чувствительным к безопасности.
-
+'''
 Точка доступа безопасности
 Критический
 
@@ -49,7 +49,7 @@
      Защита на уровне ОС от открытого текстового трафика деактивирована.
 
 Существует риск, если вы ответили утвердительно на любой из этих вопросов.
-
+'''
 url = "http://example.com" # Sensitive
 url = "ftp://anonymous@example.com" # Sensitive
 url = "telnet://anonymous@example.com" # Sensitive
@@ -88,7 +88,7 @@ lb.add_listener(
     open=True
 )
 
-For aws_cdk.aws_elasticloadbalancingv2.ApplicationListener:
+# For aws_cdk.aws_elasticloadbalancingv2.ApplicationListener:
 
 from aws_cdk import (
     aws_elasticloadbalancingv2 as elbv2,
@@ -103,7 +103,7 @@ elbv2.ApplicationListener(
     open=True
 )
 
-For aws_cdk.aws_elasticloadbalancingv2.NetworkLoadBalancer:
+# For aws_cdk.aws_elasticloadbalancingv2.NetworkLoadBalancer:
 
 from aws_cdk import (
     aws_elasticloadbalancingv2 as elbv2,
@@ -125,7 +125,7 @@ lb.add_listener(
     port=1337
 )
 
-For aws_cdk.aws_elasticloadbalancingv2.NetworkListener:
+# For aws_cdk.aws_elasticloadbalancingv2.NetworkListener:
 
 from aws_cdk import (
     aws_elasticloadbalancingv2 as elbv2,
@@ -139,7 +139,7 @@ elbv2.NetworkListener(
     load_balancer=lb
 )
 
-For aws_cdk.aws_elasticloadbalancingv2.CfnListener:
+# For aws_cdk.aws_elasticloadbalancingv2.CfnListener:
 
 from aws_cdk import (
     aws_elasticloadbalancingv2 as elbv2,
@@ -163,7 +163,7 @@ elbv2.CfnListener(
     port=1000
 )
 
-For aws_cdk.aws_elasticloadbalancing.LoadBalancerListener:
+# For aws_cdk.aws_elasticloadbalancing.LoadBalancerListener:
 
 from aws_cdk import (
     aws_elasticloadbalancing as elb,
@@ -181,7 +181,7 @@ elb.LoadBalancerListener(
     internal_port=10080
 )
 
-For aws_cdk.aws_elasticloadbalancing.CfnLoadBalancer:
+# For aws_cdk.aws_elasticloadbalancing.CfnLoadBalancer:
 
 from aws_cdk import (
     aws_elasticloadbalancing as elb
@@ -308,7 +308,7 @@ stream = kinesis.Stream(self,
 
 
 ### Рекомендуемые методы безопасного кодирования
-
+'''
      Обеспечьте передачу данных приложений по безопасному, аутентифицированному и зашифрованному протоколу, например TLS или SSH. Вот несколько альтернатив наиболее распространенным протоколам открытого текста:
          Используйте ssh как альтернативу telnet.
          Используйте sftp, scp или ftps вместо ftp.
@@ -319,7 +319,7 @@ stream = kinesis.Stream(self,
      Если возможно, принудительно отключите на уровне ОС весь трафик в виде открытого текста.
 
 Рекомендуется защищать все транспортные каналы, даже в локальных сетях, поскольку одно незащищенное соединение может поставить под угрозу все приложение или систему.
-Соответствующее решение
+Соответствующее решение'''
 
 url = "https://example.com"
 url = "sftp://anonymous@example.com"
@@ -334,7 +334,7 @@ smtp.starttls(context=context)
 
 smtp_ssl = smtplib.SMTP_SSL("smtp.gmail.com", port=465)
 
-For aws_cdk.aws_elasticloadbalancingv2.ApplicationLoadBalancer:
+# For aws_cdk.aws_elasticloadbalancingv2.ApplicationLoadBalancer:
 
 from aws_cdk import (
     aws_elasticloadbalancingv2 as elbv2,
@@ -362,7 +362,7 @@ lb.add_listener(
     open=True
 )
 
-For aws_cdk.aws_elasticloadbalancingv2.ApplicationListener:
+# For aws_cdk.aws_elasticloadbalancingv2.ApplicationListener:
 
 from aws_cdk import (
     aws_elasticloadbalancingv2 as elbv2,
@@ -378,7 +378,7 @@ elbv2.ApplicationListener(
     open=True
 )
 
-For aws_cdk.aws_elasticloadbalancingv2.NetworkLoadBalancer:
+# For aws_cdk.aws_elasticloadbalancingv2.NetworkLoadBalancer:
 
 from aws_cdk import (
     aws_elasticloadbalancingv2 as elbv2,
@@ -402,7 +402,7 @@ lb.add_listener(
     port=1024
 )
 
-For aws_cdk.aws_elasticloadbalancingv2.NetworkListener:
+# For aws_cdk.aws_elasticloadbalancingv2.NetworkListener:
 
 from aws_cdk import (
     aws_elasticloadbalancingv2 as elbv2,
@@ -417,7 +417,7 @@ elbv2.NetworkListener(
     load_balancer=lb
 )
 
-For aws_cdk.aws_elasticloadbalancingv2.CfnListener:
+# For aws_cdk.aws_elasticloadbalancingv2.CfnListener:
 
 from aws_cdk import (
     aws_elasticloadbalancingv2 as elbv2,
@@ -447,7 +447,7 @@ elbv2.CfnListener(
     )]
 )
 
-For aws_cdk.aws_elasticloadbalancing.LoadBalancerListener:
+# For aws_cdk.aws_elasticloadbalancing.LoadBalancerListener:
 
 from aws_cdk import (
     aws_elasticloadbalancing as elb,
@@ -467,7 +467,7 @@ elb.LoadBalancerListener(
     ssl_certificate_arn="certificateARN"
 )
 
-For aws_cdk.aws_elasticloadbalancing.CfnLoadBalancer:
+# For aws_cdk.aws_elasticloadbalancing.CfnLoadBalancer:
 
 from aws_cdk import (
     aws_elasticloadbalancing as elb,
@@ -501,7 +501,7 @@ elb.CfnLoadBalancer(
     subnets=vpc.select_subnets().subnet_ids
 )
 
-For aws_cdk.aws_elasticloadbalancing.LoadBalancer:
+# For aws_cdk.aws_elasticloadbalancing.LoadBalancer:
 
 from aws_cdk import (
     aws_elasticloadbalancing as elb,
@@ -545,7 +545,7 @@ loadBalancer.add_listener(
     ssl_certificate_arn="certificateARN"
 )
 
-For aws_cdk.aws_elasticache.CfnReplicationGroup:
+# For aws_cdk.aws_elasticache.CfnReplicationGroup:
 
 from aws_cdk import (
     aws_elasticache as elasticache
@@ -564,7 +564,7 @@ elasticache.CfnReplicationGroup(
     cache_node_type="cache.t2.micro"
 )
 
-For aws_cdk.aws_kinesis.CfnStream:
+# For aws_cdk.aws_kinesis.CfnStream:
 
 from aws_cdk import (
     aws_kinesis as kinesis,
@@ -590,7 +590,7 @@ stream = kinesis.CfnStream(
     }
 )
 
-For aws_cdk.aws_kinesis.Stream:
+# For aws_cdk.aws_kinesis.Stream:
 
 from aws_cdk import (
     aws_kinesis as kinesis,
@@ -618,7 +618,7 @@ stream = kinesis.Stream(
     encryption=kinesis.StreamEncryption.KMS,
     encryption_key=key
 )
-
+'''
 See
 
     OWASP Top 10 2021 Category A2 - Cryptographic Failures
@@ -630,5 +630,5 @@ See
     Google, Moving towards more secure web
     Mozilla, Deprecating non secure http
     AWS Documentation - Listeners for your Application Load Balancers
-    AWS Documentation - Stream Encryption
+    AWS Documentation - Stream Encryption'''
 

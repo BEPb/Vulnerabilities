@@ -1,6 +1,6 @@
 ###### Использование общедоступных для записи каталогов чувствительно к безопасности.
 
-Точка доступа безопасности
+'''Точка доступа безопасности
 Критический
 
      Доступно с 19 декабря 2023 г.
@@ -39,7 +39,7 @@
      Приложение создает файлы с предсказуемыми именами в общедоступной папке.
 
 Существует риск, если вы ответили утвердительно на любой из этих вопросов.
-Пример конфиденциального кода
+Пример конфиденциального кода'''
 
 file = open("/tmp/temporary_file","w+") # Sensitive
 
@@ -49,7 +49,7 @@ file = open(tmp_dir+"/temporary_file","w+")
 
 
 ### Рекомендуемые методы безопасного кодирования
-
+'''
      Используйте выделенную подпапку со строго контролируемыми разрешениями.
      Используйте безопасные API для создания временных файлов. Такой API обеспечит:
          Сгенерированное имя файла непредсказуемо
@@ -57,13 +57,13 @@ file = open(tmp_dir+"/temporary_file","w+")
          Дескриптор файла не наследуется дочерними процессами.
          Файл будет уничтожен, как только он будет закрыт.
 
-Соответствующее решение
+Соответствующее решение'''
 
 import tempfile
 
 file = tempfile.TemporaryFile(dir="/tmp/my_subdirectory", mode='"w+") # Compliant
 
-See
+'''See
 
     OWASP Top 10 2021 Category A1 - Broken Access Control
     OWASP Top 10 2017 Category A5 - Broken Access Control
@@ -71,5 +71,5 @@ See
     MITRE, CWE-377 - Insecure Temporary File
     MITRE, CWE-379 - Creation of Temporary File in Directory with Incorrect Permissions
     OWASP, Insecure Temporary File
-    Python tempfile module
+    Python tempfile module'''
 

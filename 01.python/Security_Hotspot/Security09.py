@@ -1,6 +1,6 @@
 ###### Доставка кода в производство с активированными функциями отладки важна для безопасности.
 
-Точка доступа безопасности
+'''Точка доступа безопасности
 Незначительный
 
      Доступно с 19 декабря 2023 г.
@@ -22,7 +22,7 @@
 
 Существует риск, если вы ответили утвердительно на любой из этих вопросов.
 Пример конфиденциального кода
-
+'''
 from django.conf import settings
 
 settings.configure(DEBUG=True)  # Sensitive when set to True
@@ -31,7 +31,7 @@ settings.configure(DEBUG_PROPAGATE_EXCEPTIONS=True)  # Sensitive when set to Tru
 def custom_config(config):
     settings.configure(default_settings=config, DEBUG=True)  # Sensitive
 
-Django’s "settings.py" or "global_settings.py" configuration file:
+# Django’s "settings.py" or "global_settings.py" configuration file:
 
 # NOTE: The following code raises issues only if the file is named "settings.py" or "global_settings.py". This is the default
 # name of Django configuration file
@@ -41,13 +41,13 @@ DEBUG_PROPAGATE_EXCEPTIONS = True  # Sensitive
 
 ### Рекомендуемые методы безопасного кодирования
 
-Не включайте функции отладки на рабочих серверах или в приложениях, распространяемых конечным пользователям.
+'''Не включайте функции отладки на рабочих серверах или в приложениях, распространяемых конечным пользователям.
 Видеть
 
     OWASP Top 10 2021 Category A5 - Security Misconfiguration
     OWASP Top 10 2017 Category A3 - Sensitive Data Exposure
     MITRE, CWE-489 - Active Debug Code
-    MITRE, CWE-215 - Information Exposure Through Debug Information
+    MITRE, CWE-215 - Information Exposure Through Debug Information'''
 
 
 

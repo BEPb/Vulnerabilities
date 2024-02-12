@@ -1,6 +1,6 @@
 ###### Создание общедоступных API чувствительно к безопасности.
 
-Точка доступа безопасности
+'''Точка доступа безопасности
 Блокатор
 
      Доступно с 19 декабря 2023 г.
@@ -20,7 +20,7 @@
 Пример конфиденциального кода
 
 For aws_cdk.aws_apigateway.Resource:
-
+'''
 from aws_cdk import (
     aws_apigateway as apigateway
 )
@@ -31,7 +31,7 @@ resource.add_method(
     authorization_type=apigateway.AuthorizationType.NONE  # Sensitive
 )
 
-For aws_cdk.aws_apigatewayv2.CfnRoute:
+# For aws_cdk.aws_apigatewayv2.CfnRoute:
 
 from aws_cdk import (
     aws_apigatewayv2 as apigateway
@@ -48,10 +48,10 @@ apigateway.CfnRoute(
 
 ### RРекомендуемые методы безопасного кодирования
 
-Рекомендуется ограничить доступ к API авторизованным лицам, за исключением случаев, когда API предлагает неконфиденциальную услугу, предназначенную для публичного использования.
-Соответствующее решение
-
-For aws_cdk.aws_apigateway.Resource:
+# Рекомендуется ограничить доступ к API авторизованным лицам, за исключением случаев, когда API предлагает неконфиденциальную услугу, предназначенную для публичного использования.
+# Соответствующее решение
+#
+# For aws_cdk.aws_apigateway.Resource:
 
 from aws_cdk import (
     aws_apigateway as apigateway
@@ -72,7 +72,7 @@ resource.add_method(  # authorization_type is inherited from the Resource's conf
     "POST"
 )
 
-For aws_cdk.aws_apigatewayv2.CfnRoute:
+# For aws_cdk.aws_apigatewayv2.CfnRoute:
 
 from aws_cdk import (
     aws_apigatewayv2 as apigateway
@@ -86,12 +86,12 @@ apigateway.CfnRoute(
     authorization_type="AWS_IAM"
 )
 
-See
+'''See
 
     OWASP Top 10 2021 Category A1 - Broken Access Control
     AWS Documentation - Controlling and managing access to a REST API in API Gateway
     MITRE, CWE-284 - Improper Access Control
-    OWASP Top 10 2017 Category A5 - Broken Access Control
+    OWASP Top 10 2017 Category A5 - Broken Access Control'''
 
 
 

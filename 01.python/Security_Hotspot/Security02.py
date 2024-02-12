@@ -1,6 +1,6 @@
 ###### Разрешение общедоступных списков управления доступом или политик в корзине S3 важно для безопасности.
 
-Точка доступа безопасности
+'''Точка доступа безопасности
 Критический
 
      Доступно с 19 декабря 2023 г.
@@ -33,13 +33,13 @@
 Пример конфиденциального кода
 
 По умолчанию, если он не установлен, block_public_access полностью деактивирован (ничего не блокируется):
-
+'''
 
 bucket = s3.Bucket(self,
     "bucket"        # Sensitive
 )
 
-This block_public_access allows public ACL to be set:
+# This block_public_access allows public ACL to be set:
 
 bucket = s3.Bucket(self,
     "bucket",
@@ -51,7 +51,7 @@ bucket = s3.Bucket(self,
     )
 )
 
-The attribute BLOCK_ACLS only blocks and ignores public ACLs:
+# The attribute BLOCK_ACLS only blocks and ignores public ACLs:
 
 bucket = s3.Bucket(self,
     "bucket",
@@ -63,7 +63,7 @@ bucket = s3.Bucket(self,
 
 ### Рекомендуемые методы безопасного кодирования
 
-Рекомендуется настроить:
+Р'''екомендуется настроить:
 
      block_public_acls в True, чтобы заблокировать новые попытки установить общедоступные списки ACL.
      ignore_public_acls в True, чтобы заблокировать существующие общедоступные списки ACL.
@@ -73,13 +73,13 @@ bucket = s3.Bucket(self,
 Соответствующее решение
 
 Этот блок_public_access блокирует общедоступные списки управления доступом и политики, игнорирует существующие общедоступные списки контроля доступа и ограничивает существующие общедоступные политики:
-
+'''
 bucket = s3.Bucket(self,
     "bucket",
     block_public_access=s3.BlockPublicAccess.BLOCK_ALL # Compliant
 )
 
-A similar configuration to the one above can obtained by setting all parameters of the block_public_access
+# A similar configuration to the one above can obtained by setting all parameters of the block_public_access
 
 bucket = s3.Bucket(self, "bucket",
     block_public_access=s3.BlockPublicAccess(       # Compliant
@@ -90,14 +90,14 @@ bucket = s3.Bucket(self, "bucket",
     )
 )
 
-See
+'''See
 
     OWASP Top 10 2021 Category A1 - Broken Access Control
     OWASP Top 10 2021 Category A5 - Security Misconfiguration
     AWS Documentation - Blocking public access to your Amazon S3 storage
     MITRE, CWE-284 - Improper Access Control
     OWASP Top 10 2017 Category A5 - Broken Access Control
-    AWS CDK version 2 - Bucket
+    AWS CDK version 2 - Bucket'''
 
 
 

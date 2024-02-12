@@ -1,5 +1,5 @@
 ###### Использование незашифрованных очередей SQS важно для безопасности.
-
+'''
 Точка доступа безопасности
 Главный
 
@@ -17,7 +17,7 @@ Amazon Simple Queue Service (SQS) — это управляемая служба
 Существует риск, если вы ответили утвердительно на любой из этих вопросов.
 Пример конфиденциального кода
 
-For aws_cdk.aws_sqs.Queue:
+For aws_cdk.aws_sqs.Queue:'''
 
 from aws_cdk import (
     aws_sqs as sqs
@@ -31,7 +31,7 @@ class QueueStack(Stack):
             "example"
         )
 
-For aws_cdk.aws_sqs.CfnQueue:
+# For aws_cdk.aws_sqs.CfnQueue:
 
 from aws_cdk import (
     aws_sqs as sqs
@@ -48,11 +48,11 @@ class CfnQueueStack(Stack):
 
 
 ### Рекомендуемые методы безопасного кодирования
-
+'''
 Рекомендуется шифровать очереди SQS, содержащие конфиденциальную информацию. Шифрование и дешифрование прозрачно выполняются SQS, поэтому дальнейшие изменения приложения не требуются.
 Соответствующее решение
 
-For aws_cdk.aws_sqs.Queue:
+For aws_cdk.aws_sqs.Queue:'''
 
 from aws_cdk import (
     aws_sqs as sqs
@@ -67,7 +67,7 @@ class QueueStack(Stack):
             encryption=sqs.QueueEncryption.KMS_MANAGED
         )
 
-For aws_cdk.aws_sqs.CfnQueue:
+# For aws_cdk.aws_sqs.CfnQueue:
 
 from aws_cdk import (
     aws_sqs as sqs
@@ -82,7 +82,7 @@ class CfnQueueStack(Stack):
             "example",
             kms_master_key_id=my_key.key_id
         )
-
+'''
 See
 
     OWASP Top 10 2021 Category A2 - Cryptographic Failures
@@ -91,7 +91,7 @@ See
     AWS Documentation - Encryption at rest
     OWASP Top 10 2017 Category A3 - Sensitive Data Exposure
     OWASP Top 10 2017 Category A6 - Security Misconfiguration
-    MITRE, CWE-311 - Missing Encryption of Sensitive Data
+    MITRE, CWE-311 - Missing Encryption of Sensitive Data'''
 
 
 

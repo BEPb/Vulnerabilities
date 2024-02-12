@@ -1,6 +1,6 @@
 ###### Отправка электронных писем важна с точки зрения безопасности
 
-Точка доступа безопасности
+'''Точка доступа безопасности
 Критический
 Устарело
 
@@ -45,7 +45,7 @@
 Пример конфиденциального кода
 
 
-smtplib
+smtplib'''
 
 import smtplib
 
@@ -53,14 +53,14 @@ def send(from_email, to_email, msg):
   server = smtplib.SMTP('localhost', 1025)
   server.sendmail(from_email, to_email, msg) # Sensitive
 
-Django
+# Django
 
 from django.core.mail import send_mail
 
 def send(subject, msg, from_email, to_email):
   send_mail(subject, msg, from_email, [to_email]) # Sensitive
 
-Flask-Mail
+# Flask-Mail
 
 from flask import Flask
 from flask_mail import Mail, Message
@@ -77,7 +77,7 @@ def send(subject, msg, from_email, to_email):
 
 
 ### Рекомендуемые методы безопасного кодирования
-
+'''
      Используйте библиотеку электронной почты, которая очищает заголовки (Flask-Mail или django.core.mail).
      Используйте escape-функции HTML, чтобы очистить каждый фрагмент данных, используемый в теле электронного письма.
      Проверьте логику приложения, чтобы убедиться, что функция базы электронной почты не может быть злоупотреблена:
@@ -90,4 +90,4 @@ def send(subject, msg, from_email, to_email):
      Топ-10 OWASP 2017 г. Категория A1 – Инъекции
      MITRE, CWE-93 — Неправильная нейтрализация последовательностей CRLF («инъекция CRLF»)
      MITRE, CWE-80 — неправильная нейтрализация HTML-тегов, связанных со скриптами, на веб-странице (базовый XSS)
-     SANS Top 25 — небезопасное взаимодействие между компонентами
+     SANS Top 25 — небезопасное взаимодействие между компонентами'''

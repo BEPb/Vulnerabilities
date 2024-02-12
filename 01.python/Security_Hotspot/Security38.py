@@ -1,6 +1,6 @@
 ###### Использование незашифрованных доменов OpenSearch очень важно для безопасности.
 
-Точка доступа безопасности
+'''Точка доступа безопасности
 Главный
 
      Доступно с 19 декабря 2023 г.
@@ -27,7 +27,7 @@ Amazon OpenSearch Service — это управляемый сервис для 
 Существует риск, если вы ответили утвердительно на любой из этих вопросов.
 Пример конфиденциального кода
 
-For aws_cdk.aws_opensearchservice.Domain:
+For aws_cdk.aws_opensearchservice.Domain:'''
 
 from aws_cdk.aws_opensearchservice import Domain, EngineVersion
 
@@ -39,7 +39,7 @@ class DomainStack(Stack):
             version=EngineVersion.OPENSEARCH_1_3
         ) # Sensitive, encryption is disabled by default
 
-For aws_cdk.aws_opensearchservice.CfnDomain:
+# For aws_cdk.aws_opensearchservice.CfnDomain:
 
 from aws_cdk.aws_opensearchservice import CfnDomain
 
@@ -53,13 +53,13 @@ class CfnDomainStack(Stack):
 
 
 ### Рекомендуемые методы безопасного кодирования
-
+'''
 Рекомендуется шифровать домены OpenSearch, содержащие конфиденциальную информацию.
 
 OpenSearch прозрачно осуществляет шифрование и дешифрование, поэтому дальнейшие изменения приложения не требуются.
 Соответствующее решение
 
-For aws_cdk.aws_opensearchservice.Domain:
+For aws_cdk.aws_opensearchservice.Domain:'''
 
 from aws_cdk.aws_opensearchservice import Domain, EncryptionAtRestOptions, EngineVersion
 
@@ -74,7 +74,7 @@ class DomainStack(Stack):
             )
         )
 
-For aws_cdk.aws_opensearchservice.CfnDomain:
+# For aws_cdk.aws_opensearchservice.CfnDomain:
 
 from aws_cdk.aws_opensearchservice import CfnDomain
 
@@ -87,7 +87,7 @@ class CfnDomainStack(Stack):
                 enabled=True
             )
         )
-
+'''
 See
 
     OWASP Top 10 2021 Category A2 - Cryptographic Failures
@@ -96,7 +96,7 @@ See
     AWS Documentation - Encryption of data at rest for Amazon OpenSearch Service
     OWASP Top 10 2017 Category A3 - Sensitive Data Exposure
     OWASP Top 10 2017 Category A6 - Security Misconfiguration
-    MITRE, CWE-311 - Missing Encryption of Sensitive Data
+    MITRE, CWE-311 - Missing Encryption of Sensitive Data'''
 
 
 

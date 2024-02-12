@@ -1,6 +1,6 @@
 ###### Жестко закодированные учетные данные чувствительны к безопасности.
 
-Точка доступа безопасности
+'''Точка доступа безопасности
 Блокатор
 
      Доступно с 19 декабря 2023 г.
@@ -28,7 +28,7 @@
      Перед обновлением учетных данных требуется перераспределение приложения.
 
 Существует риск, если вы ответили утвердительно на любой из этих вопросов.
-Пример конфиденциального кода
+Пример конфиденциального кода'''
 
 username = 'admin'
 password = 'admin' # Sensitive
@@ -39,13 +39,13 @@ usernamePassword = 'user=admin&password=admin' # Sensitive
 
 
 ### Рекомендуемые методы безопасного кодирования
-
+'''
      Сохраните учетные данные в файле конфигурации, который не будет отправлен в репозиторий кода.
      Сохраните учетные данные в базе данных.
      Используйте службу своего облачного провайдера для управления секретами.
      Если пароль был раскрыт через исходный код: измените его.
 
-Соответствующее решение
+Соответствующее решение'''
 
 import os
 
@@ -53,7 +53,7 @@ username = os.getenv("username") # Compliant
 password = os.getenv("password") # Compliant
 usernamePassword = 'user=%s&password=%s' % (username, password) # Compliant{code}
 
-See
+'''See
 
 
 Топ-10 OWASP 2021 г., Категория A7 — Сбои идентификации и аутентификации
@@ -68,7 +68,7 @@ See
     MITRE, CWE-798 - Use of Hard-coded Credentials
     MITRE, CWE-259 - Use of Hard-coded Password
     SANS Top 25 - Porous Defenses
-    Derived from FindSecBugs rule Hard Coded Password
+    Derived from FindSecBugs rule Hard Coded Password'''
 
 
 

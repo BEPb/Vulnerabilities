@@ -1,6 +1,6 @@
 ###### Создание файлов cookie без флага «безопасно» является чувствительным к безопасности.
 
-Точка доступа безопасности
+'''Точка доступа безопасности
 Незначительный
 
      Доступно с 19 декабря 2023 г.
@@ -18,7 +18,7 @@
 Пример конфиденциального кода
 
 Flask
-
+'''
 from flask import Response
 
 @app.route('/')
@@ -29,13 +29,13 @@ def index():
 
 
 ### Рекомендуемые методы безопасного кодирования
-
+'''
      Рекомендуется везде использовать HTTP, поэтому установка флага безопасности в значение true должна быть поведением по умолчанию при создании файлов cookie.
      Установите для флага безопасности значение true для файлов cookie сеанса.
 
 Соответствующее решение
 
-Flask
+Flask'''
 
 from flask import Response
 
@@ -45,7 +45,7 @@ def index():
     response.set_cookie('key', 'value', secure=True) # Compliant
     return response
 
-See
+'''See
 
     OWASP Top 10 2021 Category A4 - Insecure Design
     OWASP Top 10 2021 Category A5 - Security Misconfiguration
@@ -54,7 +54,7 @@ See
     MITRE, CWE-315 - Cleartext Storage of Sensitive Information in a Cookie
     MITRE, CWE-614 - Sensitive Cookie in HTTPS Session Without 'Secure' Attribute
     SANS Top 25 - Porous Defenses
-
+'''
 
 
 

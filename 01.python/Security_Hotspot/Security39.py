@@ -1,6 +1,6 @@
 ###### Использование незашифрованных ресурсов базы данных RDS чувствительно к безопасности.
 
-Точка доступа безопасности
+'''Точка доступа безопасности
 Главный
 
      Доступно с 19 декабря 2023 г.
@@ -26,7 +26,7 @@
 Существует риск, если вы ответили утвердительно на любой из этих вопросов.
 Пример конфиденциального кода
 
-For aws_cdk.aws_rds.DatabaseCluster and aws_cdk.aws_rds.DatabaseInstance:
+For aws_cdk.aws_rds.DatabaseCluster and aws_cdk.aws_rds.DatabaseInstance:'''
 
 from aws_cdk import (
     aws_rds as rds
@@ -40,7 +40,7 @@ class DatabaseStack(Stack):
             "example"
         )
 
-For aws_cdk.aws_rds.CfnDBCluster and aws_cdk.aws_rds.CfnDBInstance:
+# For aws_cdk.aws_rds.CfnDBCluster and aws_cdk.aws_rds.CfnDBInstance:
 
 from aws_cdk import (
     aws_rds as rds
@@ -60,11 +60,11 @@ class DatabaseStack(Stack):
 
 ### Рекомендуемые методы безопасного кодирования
 
-Рекомендуется включать шифрование неактивных данных для любого ресурса БД RDS, независимо от механизма.
+'''Рекомендуется включать шифрование неактивных данных для любого ресурса БД RDS, независимо от механизма.
 В любом случае дальнейшее обслуживание не требуется, поскольку шифрование хранящихся данных полностью контролируется AWS.
 Соответствующее решение
 
-For aws_cdk.aws_rds.DatabaseCluster and aws_cdk.aws_rds.DatabaseInstance:
+For aws_cdk.aws_rds.DatabaseCluster and aws_cdk.aws_rds.DatabaseInstance:'''
 
 from aws_cdk import (
     aws_rds as rds
@@ -79,7 +79,7 @@ class DatabaseStack(Stack):
             storage_encrypted=True
         )
 
-For aws_cdk.aws_rds.CfnDBCluster and aws_cdk.aws_rds.CfnDBInstance:
+# For aws_cdk.aws_rds.CfnDBCluster and aws_cdk.aws_rds.CfnDBInstance:
 
 from aws_cdk import (
     aws_rds as rds
@@ -94,9 +94,9 @@ class DatabaseStack(Stack):
             storage_encrypted=True
         )
 
-See
+'''See
 
     AWS Documentation - Encrypting Amazon RDS resources
-    MITRE, CWE-311 - Missing Encryption of Sensitive Data
+    MITRE, CWE-311 - Missing Encryption of Sensitive Data'''
 
 

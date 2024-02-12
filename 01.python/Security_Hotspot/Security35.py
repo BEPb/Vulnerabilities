@@ -1,6 +1,6 @@
 ###### Использование интерпретатора оболочки при выполнении команд ОС важно с точки зрения безопасности.
 
-Точка доступа безопасности
+'''Точка доступа безопасности
 Главный
 Устарело
 
@@ -21,7 +21,7 @@
 Существует риск, если вы ответили утвердительно на этот вопрос.
 Пример конфиденциального кода
 
-Python 3
+Python 3'''
 
 subprocess.run(cmd, shell=True)  # Sensitive
 subprocess.Popen(cmd, shell=True)  # Sensitive
@@ -30,7 +30,7 @@ subprocess.check_call(cmd, shell=True)  # Sensitive
 subprocess.check_output(cmd, shell=True)  # Sensitive
 os.system(cmd)  # Sensitive: a shell is always spawn
 
-Python 2
+# Python 2
 
 cmd = "when a string is passed through these function, a shell is spawn"
 (_, child_stdout, _) = os.popen2(cmd)  # Sensitive
@@ -45,10 +45,10 @@ cmd = "when a string is passed through these function, a shell is spawn"
 
 ### Рекомендуемые методы безопасного кодирования
 
-Используйте функции, которые не создают оболочку.
+'''Используйте функции, которые не создают оболочку.
 Соответствующее решение
 
-Python 3
+Python 3'''
 
 # by default shell=False, a shell is not spawn
 subprocess.run(cmd)  # Compliant
@@ -80,7 +80,7 @@ os.execve(path, cmd, env)  # Compliant
 os.execvp(file, cmd)  # Compliant
 os.execvpe(file, cmd, env)  # Compliant
 
-Python 2
+# Python 2
 
 cmdsargs = ("use", "a", "sequence", "to", "directly", "start", "a", "subprocess")
 
@@ -92,10 +92,10 @@ cmdsargs = ("use", "a", "sequence", "to", "directly", "start", "a", "subprocess"
 (child_stdout, _, _) = popen2.popen3(cmdsargs)  # Compliant
 (child_stdout, _) = popen2.popen4(cmdsargs)  # Compliant
 
-See
+'''See
 
     OWASP Top 10 2021 Category A3 - Injection
     OWASP Top 10 2017 Category A1 - Injection
     MITRE, CWE-78 - Improper Neutralization of Special Elements used in an OS Command
-    SANS Top 25 - Insecure Interaction Between Components
+    SANS Top 25 - Insecure Interaction Between Components'''
 

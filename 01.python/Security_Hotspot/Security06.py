@@ -1,5 +1,5 @@
 ###### Создание файлов cookie без флага «HttpOnly» является чувствительным к безопасности.
-
+'''
 Точка доступа безопасности
 Незначительный
 
@@ -17,7 +17,7 @@
 Существует риск, если вы ответили утвердительно на любой из этих вопросов.
 Пример конфиденциального кода
 
-Flask:
+Flask:'''
 
 from flask import Response
 
@@ -31,11 +31,11 @@ def index():
 
 ### Рекомендуемые методы безопасного кодирования
 
-     По умолчанию флаг HttpOnly должен быть установлен в значение true для большинства файлов cookie и является обязательным для файлов cookie сеанса или конфиденциальной безопасности.
+     '''По умолчанию флаг HttpOnly должен быть установлен в значение true для большинства файлов cookie и является обязательным для файлов cookie сеанса или конфиденциальной безопасности.
 
 Соответствующее решение
 
-Flask:
+Flask:'''
 
 from flask import Response
 
@@ -45,7 +45,7 @@ def index():
     response.set_cookie('key', 'value', httponly=True) # Compliant
     return response
 
-See
+'''See
 
     OWASP Top 10 2021 Category A5 - Security Misconfiguration
     OWASP HttpOnly
@@ -53,8 +53,4 @@ See
     MITRE, CWE-1004 - Sensitive Cookie Without 'HttpOnly' Flag
     SANS Top 25 - Insecure Interaction Between Components
     Derived from FindSecBugs rule HTTPONLY_COOKIE
-
-
-
-
-
+'''

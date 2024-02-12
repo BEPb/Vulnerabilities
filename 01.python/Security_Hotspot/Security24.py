@@ -1,6 +1,6 @@
 ###### Чтение стандартного ввода чувствительно к безопасности.
 
-Точка доступа безопасности
+'''Точка доступа безопасности
 Критический
 Устарело
 
@@ -27,7 +27,7 @@
 Вы находитесь в группе риска, если ответили утвердительно на этот вопрос.
 Пример конфиденциального кода
 
-Python 2 and Python 3
+Python 2 and Python 3'''
 
 import sys
 from sys import stdin, __stdin__
@@ -50,15 +50,15 @@ sys.stdin.readlines()  # Sensitive
 sys.stdin.seekable()  # Ok
 # ...
 
-Python 2 only
+# Python 2 only
 
 raw_input('What is your password?')  # Sensitive
 
-Python 3 only
+# Python 3 only
 
 input('What is your password?')  # Sensitive
 
-Function fileinput.input and class fileinput.FileInput read the standard input when the list of files is empty.
+# Function fileinput.input and class fileinput.FileInput read the standard input when the list of files is empty.
 
 for line in fileinput.input():  # Sensitive
     print(line)
@@ -77,8 +77,8 @@ for line in fileinput.FileInput(['setup.py']):  # Ok
 
 ### Рекомендуемые методы безопасного кодирования
 
-Очистите все данные, считанные со стандартного ввода, перед их использованием.
+'''Очистите все данные, считанные со стандартного ввода, перед их использованием.
 Видеть
 
-     MITRE, CWE-20 — неправильная проверка ввода
+     MITRE, CWE-20 — неправильная проверка ввода'''
 

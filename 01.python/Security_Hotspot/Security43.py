@@ -1,5 +1,5 @@
 ###### Использование слабых алгоритмов хеширования чувствительно к безопасности.
-
+'''
 Точка доступа безопасности
 Критический
 
@@ -18,29 +18,29 @@
 
 Существует риск, если вы ответили утвердительно на любой из этих вопросов.
 Пример конфиденциального кода
+'''
+import hashlib
+m = hashlib.md5() # Sensitive
 
 import hashlib
-m = hashlib.md5() // Sensitive
+m = hashlib.sha1() # Sensitive
 
-import hashlib
-m = hashlib.sha1() // Sensitive
-
-import md5 // Sensitive and deprecated since Python 2.5; use the hashlib module instead.
+import md5 # Sensitive and deprecated since Python 2.5; use the hashlib module instead.
 m = md5.new()
 
-import sha // Sensitive and deprecated since Python 2.5; use the hashlib module instead.
+import sha # Sensitive and deprecated since Python 2.5; use the hashlib module instead.
 m = sha.new()
 
 
 
 ### Рекомендуемые методы безопасного кодирования
-
+'''
 Рекомендуется использовать более безопасные альтернативы, такие как SHA-256, SHA-512, SHA-3, а для хеширования паролей даже лучше использовать алгоритмы, которые не вычисляются слишком «быстро», например bcrypt, scrypt, argon2 или pbkdf2, поскольку они замедляют работу. отражать атаки грубой силы.
-Соответствующее решение
+Соответствующее решение'''
 
 import hashlib
-m = hashlib.sha512() // Compliant
-
+m = hashlib.sha512() # Compliant
+'''
 See
 
     OWASP Top 10 2021 Category A2 - Cryptographic Failures
@@ -49,7 +49,7 @@ See
     Mobile AppSec Verification Standard - Cryptography Requirements
     OWASP Mobile Top 10 2016 Category M5 - Insufficient Cryptography
     MITRE, CWE-1240 - Use of a Risky Cryptographic Primitive
-    SANS Top 25 - Porous Defenses
+    SANS Top 25 - Porous Defenses'''
 
 
 

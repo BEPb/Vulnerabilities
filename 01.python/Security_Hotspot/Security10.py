@@ -1,6 +1,6 @@
 ###### Отключение автоматического экранирования в механизмах шаблонов является чувствительным к безопасности.
 
-Точка доступа безопасности
+'''Точка доступа безопасности
 Главный
 
      Доступно с 19 декабря 2023 г.
@@ -22,7 +22,7 @@
 
 Существует риск, если вы ответили утвердительно на любой из этих вопросов.
 Пример конфиденциального кода
-
+'''
 from jinja2 import Environment
 
 env = Environment() # Sensitive: New Jinja2 Environment has autoescape set to false
@@ -30,19 +30,19 @@ env = Environment(autoescape=False) # Sensitive:
 
 ### Рекомендуемые методы безопасного кодирования
 
-Включите автоматическое экранирование по умолчанию и продолжайте проверять использование входных данных, чтобы убедиться, что выбранная стратегия автоматического экранирования является правильной.
+'''Включите автоматическое экранирование по умолчанию и продолжайте проверять использование входных данных, чтобы убедиться, что выбранная стратегия автоматического экранирования является правильной.
 Соответствующее решение
-
+'''
 from jinja2 import Environment
 env = Environment(autoescape=True) # Compliant
 
-See
+'''See
 
     OWASP Top 10 2021 Category A3 - Injection
     OWASP Cheat Sheet - XSS Prevention Cheat Sheet
     OWASP Top 10 2017 Category A7 - Cross-Site Scripting (XSS)
     MITRE, CWE-79 - Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
-
+'''
 
 
 

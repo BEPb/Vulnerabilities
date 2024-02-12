@@ -1,5 +1,5 @@
 ###### Установка свободных прав доступа к файлам POSIX важна для безопасности.
-
+'''
 Точка доступа безопасности
 Главный
 
@@ -20,11 +20,11 @@
 Существует риск, если вы ответили утвердительно на любой из этих вопросов.
 Пример конфиденциального кода
 
-For os.umask:
+For os.umask:'''
 
 os.umask(0)  # Sensitive
 
-For os.chmod, os.lchmod, and os.fchmod:
+# For os.chmod, os.lchmod, and os.fchmod:
 
 os.chmod("/tmp/fs", stat.S_IRWXO)   # Sensitive
 os.lchmod("/tmp/fs", stat.S_IRWXO)  # Sensitive
@@ -36,19 +36,19 @@ os.fchmod(fd, stat.S_IRWXO)         # Sensitive
 
 
 ### Рекомендуемые методы безопасного кодирования
-
+'''
 Файлам и каталогам следует назначать максимально строгие разрешения.
 Соответствующее решение
-For os.umask:
+For os.umask:'''
 
 os.umask(0o777)
 
-For os.chmod, os.lchmod, and os.fchmod:
+# For os.chmod, os.lchmod, and os.fchmod:
 
 os.chmod("/tmp/fs", stat.S_IRWXU)
 os.lchmod("/tmp/fs", stat.S_IRWXU)
 os.fchmod(fd, stat.S_IRWXU)
-
+'''
 See
 
     OWASP Top 10 2021 Category A1 - Broken Access Control
@@ -57,4 +57,4 @@ See
     OWASP File Permission
     MITRE, CWE-732 - Incorrect Permission Assignment for Critical Resource
     MITRE, CWE-266 - Incorrect Privilege Assignment
-    SANS Top 25 - Porous Defenses
+    SANS Top 25 - Porous Defenses'''

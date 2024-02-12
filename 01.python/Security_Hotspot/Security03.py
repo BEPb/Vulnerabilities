@@ -1,5 +1,5 @@
 ###### питон: S6329
-Разрешение доступа общедоступной сети к облачным ресурсам важно с точки зрения безопасности.
+'''Разрешение доступа общедоступной сети к облачным ресурсам важно с точки зрения безопасности.
 
 Точка доступа безопасности
 Блокатор
@@ -35,7 +35,7 @@
 Существует риск, если вы ответили «нет» хотя бы на один из этих вопросов.
 Пример конфиденциального кода
 
-Для aws_cdk.aws_ec2.Instance и подобных конструкций:
+Для aws_cdk.aws_ec2.Instance и подобных конструкций:'''
 
 from aws_cdk import aws_ec2 as ec2
 
@@ -48,7 +48,7 @@ ec2.Instance(
     vpc_subnets=ec2.SubnetSelection(subnet_type=ec2.SubnetType.PUBLIC) # Sensitive
 )
 
-For aws_cdk.aws_ec2.CfnInstance:
+# For aws_cdk.aws_ec2.CfnInstance:
 
 from aws_cdk import aws_ec2 as ec2
 
@@ -67,7 +67,7 @@ ec2.CfnInstance(
     ]
 )
 
-For aws_cdk.aws_dms.CfnReplicationInstance:
+# For aws_cdk.aws_dms.CfnReplicationInstance:
 
 from aws_cdk import aws_dms as dms
 
@@ -81,7 +81,7 @@ rep_instance = dms.CfnReplicationInstance(
     vpc_security_group_ids=[vpc.vpc_default_security_group]
 )
 
-For aws_cdk.aws_rds.CfnDBInstance:
+# For aws_cdk.aws_rds.CfnDBInstance:
 
 from aws_cdk import aws_rds as rds
 from aws_cdk import aws_ec2 as ec2
@@ -113,7 +113,7 @@ rds.CfnDBInstance(
 
 ### Рекомендуемые методы безопасного кодирования
 
-Избегайте публикации облачных сервисов в Интернете, если они не предназначены для публичного доступа, например, на клиентских порталах или сайтах электронной коммерции.
+'''Избегайте публикации облачных сервисов в Интернете, если они не предназначены для публичного доступа, например, на клиентских порталах или сайтах электронной коммерции.
 
 Используйте частные сети (и связанные с ними частные IP-адреса), а также пиринг VPC или другие безопасные коммуникационные туннели для связи с другими облачными компонентами.
 
@@ -122,7 +122,7 @@ rds.CfnDBInstance(
 
 Соответствующее решение
 
-For aws_cdk.aws_ec2.Instance:
+For aws_cdk.aws_ec2.Instance:'''
 
 from aws_cdk import aws_ec2 as ec2
 
@@ -135,7 +135,7 @@ ec2.Instance(
     vpc_subnets=ec2.SubnetSelection(subnet_type=ec2.SubnetType.PRIVATE_WITH_NAT)
 )
 
-For aws_cdk.aws_ec2.CfnInstance:
+# For aws_cdk.aws_ec2.CfnInstance:
 
 from aws_cdk import aws_ec2 as ec2
 
@@ -154,7 +154,7 @@ ec2.CfnInstance(
     ]
 )
 
-For aws_cdk.aws_dms.CfnReplicationInstance:
+# For aws_cdk.aws_dms.CfnReplicationInstance:
 
 from aws_cdk import aws_dms as dms
 
@@ -168,7 +168,7 @@ rep_instance = dms.CfnReplicationInstance(
     vpc_security_group_ids=[vpc.vpc_default_security_group]
 )
 
-For aws_cdk.aws_rds.CfnDBInstance:
+# For aws_cdk.aws_rds.CfnDBInstance:
 
 from aws_cdk import aws_rds as rds
 from aws_cdk import aws_ec2 as ec2
@@ -196,15 +196,15 @@ rds.CfnDBInstance(
     vpc_security_groups=[sg.security_group_id]
 )
 
-See
-
+# See
+'''
     OWASP Top 10 2021 Category A1 - Broken Access Control
     AWS Documentation - Amazon EC2 instance IP addressing
     AWS Documentation - Public and private replication instances
     AWS Documentation - VPC Peering
     MITRE, CWE-284 - Improper Access Control
     MITRE, CWE-668 - Exposure of Resource to Wrong Sphere
-    OWASP Top 10 2017 Category A5 - Broken Access Control
+    OWASP Top 10 2017 Category A5 - Broken Access Control'''
 
 
 

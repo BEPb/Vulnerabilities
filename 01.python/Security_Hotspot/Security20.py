@@ -1,6 +1,6 @@
 ###### Наличие разрешительной политики совместного использования ресурсов между источниками является чувствительным к безопасности.
 
-Точка доступа безопасности
+'''Точка доступа безопасности
 Незначительный
 
      Доступно с 19 декабря 2023 г.
@@ -23,11 +23,11 @@
 Существует риск, если вы ответили утвердительно на любой из этих вопросов.
 Пример конфиденциального кода
 
-Django:
+Django:'''
 
 CORS_ORIGIN_ALLOW_ALL = True # Sensitive
 
-Flask:
+# Flask:
 
 from flask import Flask
 from flask_cors import CORS
@@ -35,7 +35,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*", "send_wildcard": "True"}}) # Sensitive
 
-User-controlled origin:
+# User-controlled origin:
 
 origin = request.headers['ORIGIN']
 resp = Response()
@@ -44,16 +44,16 @@ resp.headers['Access-Control-Allow-Origin'] = origin # Sensitive
 
 ### Рекомендуемые методы безопасного кодирования
 
-     Заголовок Access-Control-Allow-Origin следует устанавливать только для доверенного источника и для определенных ресурсов.
+    ''' Заголовок Access-Control-Allow-Origin следует устанавливать только для доверенного источника и для определенных ресурсов.
      Разрешить только выбранные доверенные домены в заголовке Access-Control-Allow-Origin. Предпочитайте внесение доменов в белый список, а не внесение в черный список или разрешение любого домена (не используйте подстановочный знак * и не возвращайте вслепую содержимое заголовка Origin без каких-либо проверок).
 
 Соответствующее решение
 
 Django:
-
+'''
 CORS_ORIGIN_ALLOW_ALL = False # Compliant
 
-Flask:
+# Flask:
 
 from flask import Flask
 from flask_cors import CORS
@@ -61,14 +61,14 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*", "send_wildcard": "False"}}) # Compliant
 
-User-controlled origin validated with an allow-list:
+# User-controlled origin validated with an allow-list:
 
 origin = request.headers['ORIGIN']
 resp = Response()
 if origin in TRUSTED_ORIGINS:
    resp.headers['Access-Control-Allow-Origin'] = origin
 
-See
+'''See
 
 Топ-10 OWASP 2021 г., категория A5 — неправильная конфигурация безопасности
      Топ-10 OWASP 2021 г., Категория A7 — Сбои идентификации и аутентификации
@@ -88,6 +88,6 @@ See
     OWASP HTML5 Security Cheat Sheet - Cross Origin Resource Sharing
     MITRE, CWE-346 - Origin Validation Error
     MITRE, CWE-942 - Overly Permissive Cross-domain Whitelist
-    SANS Top 25 - Porous Defenses
+    SANS Top 25 - Porous Defenses'''
 
 

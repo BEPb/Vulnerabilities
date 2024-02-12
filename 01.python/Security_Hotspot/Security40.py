@@ -1,5 +1,5 @@
 ###### питон: S6319
-Использование незашифрованных экземпляров блокнотов SageMaker важно для безопасности.
+'''Использование незашифрованных экземпляров блокнотов SageMaker важно для безопасности.
 
 Точка доступа безопасности
 Главный
@@ -20,7 +20,7 @@ Amazon SageMaker — это управляемый сервис машинног
 Существует риск, если вы ответили утвердительно на любой из этих вопросов.
 Пример конфиденциального кода
 
-For aws_cdk.aws_sagemaker.CfnNotebookInstance:
+For aws_cdk.aws_sagemaker.CfnNotebookInstance:'''
 
 from aws_cdk import (
     aws_sagemaker as sagemaker
@@ -41,9 +41,9 @@ class CfnSagemakerStack(Stack):
 
 ### Рекомендуемые методы безопасного кодирования
 
-Рекомендуется шифровать экземпляры блокнотов SageMaker, содержащие конфиденциальную информацию. Шифрование и дешифрование выполняются SageMaker прозрачно, поэтому никаких дополнительных изменений в приложении не требуется.
+'''Рекомендуется шифровать экземпляры блокнотов SageMaker, содержащие конфиденциальную информацию. Шифрование и дешифрование выполняются SageMaker прозрачно, поэтому никаких дополнительных изменений в приложении не требуется.
 Соответствующее решение
-For aws_cdk.aws_sagemaker.CfnNotebookInstance:
+For aws_cdk.aws_sagemaker.CfnNotebookInstance:'''
 
 from aws_cdk import (
     aws_sagemaker as sagemaker,
@@ -61,7 +61,7 @@ class CfnSagemakerStack(Stack):
             role_arn="roleArn",
             kms_key_id=my_key.key_id
         )
-
+'''
 See
 
     OWASP Top 10 2021 Category A2 - Cryptographic Failures
@@ -70,7 +70,7 @@ See
     Protect Data at Rest Using Encryption
     OWASP Top 10 2017 Category A3 - Sensitive Data Exposure
     OWASP Top 10 2017 Category A6 - Security Misconfiguration
-    MITRE, CWE-311 - Missing Encryption of Sensitive Data
+    MITRE, CWE-311 - Missing Encryption of Sensitive Data'''
 
 
 

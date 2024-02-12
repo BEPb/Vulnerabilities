@@ -1,5 +1,5 @@
 ###### питон: S6265
-Предоставление доступа к корзинам S3 всем или прошедшим проверку подлинности пользователям важно с точки зрения безопасности.
+'''Предоставление доступа к корзинам S3 всем или прошедшим проверку подлинности пользователям важно с точки зрения безопасности.
 
 Точка доступа безопасности
 Блокатор
@@ -24,7 +24,7 @@
 Существует риск, если вы ответили утвердительно на любой из этих вопросов.
 Пример конфиденциального кода
 
-All users (ie: anyone in the world authenticated or not) have read and write permissions with the PUBLIC_READ_WRITE access control:
+All users (ie: anyone in the world authenticated or not) have read and write permissions with the PUBLIC_READ_WRITE access control:'''
 
 bucket = s3.Bucket(self, "bucket",
     access_control=s3.BucketAccessControl.PUBLIC_READ_WRITE     # Sensitive
@@ -40,10 +40,10 @@ s3deploy.BucketDeployment(self, "DeployWebsite",
 
 ### Рекомендуемые методы безопасного кодирования
 
-Рекомендуется реализовать политику наименьших привилегий, то есть предоставлять необходимые разрешения только пользователям для выполнения их необходимых задач. В контексте стандартного ACL установите для него значение PRIVATE (по умолчанию), а если требуется большая степень детализации, используйте соответствующую политику S3.
+'''Рекомендуется реализовать политику наименьших привилегий, то есть предоставлять необходимые разрешения только пользователям для выполнения их необходимых задач. В контексте стандартного ACL установите для него значение PRIVATE (по умолчанию), а если требуется большая степень детализации, используйте соответствующую политику S3.
 Соответствующее решение
 
-При использовании ЧАСТНОГО контроля доступа (по умолчанию) только владелец корзины имеет разрешения на чтение/запись для корзин и их ACL.
+При использовании ЧАСТНОГО контроля доступа (по умолчанию) только владелец корзины имеет разрешения на чтение/запись для корзин и их ACL.'''
 
 bucket = s3.Bucket(self, "bucket",
     access_control=s3.BucketAccessControl.PRIVATE       # Compliant
@@ -55,7 +55,7 @@ s3deploy.BucketDeployment(self, "DeployWebsite",
 )
 
 
-Видеть
+'''Видеть
 
      Топ-10 OWASP 2021 г., категория A1 — нарушенный контроль доступа
      Документация AWS — обзор списка контроля доступа (ACL) (стандартные ACL)
@@ -73,7 +73,7 @@ See
     MITRE, CWE-732 - Incorrect Permission Assignment for Critical Resource
     MITRE, CWE-284 - Improper Access Control
     OWASP Top 10 2017 Category A5 - Broken Access Control
-    AWS CDK version 2 - Class Bucket (construct)
+    AWS CDK version 2 - Class Bucket (construct)'''
 
 
 

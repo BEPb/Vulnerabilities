@@ -1,6 +1,6 @@
 ###### Отключение защиты CSRF чувствительно к безопасности.
 
-Точка доступа безопасности
+'''Точка доступа безопасности
 Критический
 
      Доступно с 19 декабря 2023 г.
@@ -22,7 +22,7 @@
 
 For a Django application, the code is sensitive when,
 
-    django.middleware.csrf.CsrfViewMiddleware is not used in the Django settings:
+    django.middleware.csrf.CsrfViewMiddleware is not used in the Django settings:'''
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -33,15 +33,15 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ] # Sensitive: django.middleware.csrf.CsrfViewMiddleware is missing
 
-    the CSRF protection is disabled on a view:
+    # the CSRF protection is disabled on a view:
 
 @csrf_exempt # Sensitive
 def example(request):
     return HttpResponse("default")
 
-For a Flask application, the code is sensitive when,
+'''For a Flask application, the code is sensitive when,
 
-    the WTF_CSRF_ENABLED setting is set to false:
+    the WTF_CSRF_ENABLED setting is set to false:'''
 
 app = Flask(__name__)
 app.config['WTF_CSRF_ENABLED'] = False # Sensitive
@@ -78,7 +78,7 @@ class unprotectedForm(FlaskForm):
 
 ### Рекомендуемые методы безопасного кодирования
 
-     Настоятельно рекомендуется защита от атак CSRF:
+    ''' Настоятельно рекомендуется защита от атак CSRF:
          будет активирован по умолчанию для всех небезопасных методов HTTP.
          реализовано, например, с помощью неугадываемого токена CSRF
      Конечно, все конфиденциальные операции не следует выполнять с помощью безопасных методов HTTP, таких как GET, которые предназначены только для поиска информации.
@@ -87,7 +87,7 @@ class unprotectedForm(FlaskForm):
 
 For a Django application,
 
-    it is recommended to protect all the views with django.middleware.csrf.CsrfViewMiddleware:
+    it is recommended to protect all the views with django.middleware.csrf.CsrfViewMiddleware:'''
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -99,20 +99,20 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-    and to not disable the CSRF protection on specific views:
+    # and to not disable the CSRF protection on specific views:
 
 def example(request): # Compliant
     return HttpResponse("default")
 
-For a Flask application,
+'''For a Flask application,
 
-    the CSRFProtect module should be used (and not disabled further with WTF_CSRF_ENABLED set to false):
+    the CSRFProtect module should be used (and not disabled further with WTF_CSRF_ENABLED set to false):'''
 
 app = Flask(__name__)
 csrf = CSRFProtect()
 csrf.init_app(app) # Compliant
 
-    and it is recommended to not disable the CSRF protection on specific views or forms:
+    # and it is recommended to not disable the CSRF protection on specific views or forms:
 
 @app.route('/example/', methods=['POST']) # Compliant
 def example():
@@ -125,13 +125,13 @@ class unprotectedForm(FlaskForm):
     name = TextField('name')
     submit = SubmitField('submit')
 
-See
+'''See
 
     OWASP Top 10 2021 Category A1 - Broken Access Control
     MITRE, CWE-352 - Cross-Site Request Forgery (CSRF)
     OWASP Top 10 2017 Category A6 - Security Misconfiguration
     OWASP: Cross-Site Request Forgery
-    SANS Top 25 - Insecure Interaction Between Components
+    SANS Top 25 - Insecure Interaction Between Components'''
 
 
 

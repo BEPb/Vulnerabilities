@@ -1,5 +1,5 @@
 ###### Использование незашифрованных тем в социальных сетях важно для безопасности.
-
+'''
 Точка доступа безопасности
 Главный
 
@@ -18,7 +18,7 @@ Amazon Simple Notification Service (SNS) — это управляемая сл�
 Существует риск, если вы ответили утвердительно на любой из этих вопросов.
 Пример конфиденциального кода
 
-For aws_cdk.aws_sns.Topic:
+For aws_cdk.aws_sns.Topic:'''
 
 from aws_cdk import (
     aws_sns as sns
@@ -32,7 +32,7 @@ class TopicStack(Stack):
             "example"
         )
 
-For aws_cdk.aws_sns.CfnTopic:
+# For aws_cdk.aws_sns.CfnTopic:
 
 from aws_cdk import (
     aws_sns as sns
@@ -49,12 +49,12 @@ class TopicStack(Stack):
 
 
 ### Рекомендуемые методы безопасного кодирования
-
+'''
 Рекомендуется шифровать темы в социальных сетях, содержащие конфиденциальную информацию. Шифрование и дешифрование выполняются SNS прозрачно, поэтому никаких дополнительных изменений в приложении не требуется.
 Соответствующее решение
 
 
-For aws_cdk.aws_sns.Topic:
+For aws_cdk.aws_sns.Topic:'''
 
 from aws_cdk import (
     aws_sns as sns
@@ -70,7 +70,7 @@ class TopicStack(Stack):
             master_key=my_key
         )
 
-For aws_cdk.aws_sns.CfnTopic:
+# For aws_cdk.aws_sns.CfnTopic:
 
 from aws_cdk import (
     aws_sns as sns
@@ -85,7 +85,7 @@ class TopicStack(Stack):
             "example",
             kms_master_key_id=my_key.key_id
         )
-
+'''
 See
 
     OWASP Top 10 2021 Category A2 - Cryptographic Failures
@@ -95,7 +95,7 @@ See
     Encrypting messages published to Amazon SNS with AWS KMS
     OWASP Top 10 2017 Category A3 - Sensitive Data Exposure
     OWASP Top 10 2017 Category A6 - Security Misconfiguration
-    MITRE, CWE-311 - Missing Encryption of Sensitive Data
+    MITRE, CWE-311 - Missing Encryption of Sensitive Data'''
 
 
 
